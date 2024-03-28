@@ -6,12 +6,6 @@ import java.util.stream.IntStream;
 
 public class Ex118666 {
 	
-	public static void main(String[] args) {
-		
-		
-		System.out.println( solution(new String[]{"TR", "RT", "TR"}, new int[] {7, 1, 3}) );
-	}
-	
     public static String solution(String[] survey, int[] choices) {
         String answer = "";
         String[] surveyAr = new String[]{"RT", "TR", "CF", "FC", "JM", "MJ", "AN", "NA"};
@@ -20,7 +14,7 @@ public class Ex118666 {
         int[] score = new int[surveyArlength];
         
         IntStream.rangeClosed(0, survey.length-1).forEach(i->
-        	score[ surList.indexOf(survey[i]) ] += (choices[i]-4)*-1
+        	score[ surList.indexOf(survey[i]) ] += choices[i]-4*-1
         );
         
         for(int i=0; i<surveyArlength-1; i+=2) {
@@ -28,7 +22,7 @@ public class Ex118666 {
         	if(score[i]<0) {
         		answer += surveyAr[i].substring(1,2);
         	} else {
-        		answer += surveyAr[i].substring(1);
+        		answer += surveyAr[i].substring(0,1);
         	}
         }
         return answer;
