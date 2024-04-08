@@ -1,6 +1,5 @@
 package coding_example.programers;
 
-import java.util.*;
 
 public class Ex12931 {
     public int solution(int n) {

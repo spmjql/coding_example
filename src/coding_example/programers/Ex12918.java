@@ -7,6 +7,8 @@ public class Ex12918 {
         } catch(NumberFormatException e) {
         	return false;
         }
+        int le = s.length();
+        if ( !(le == 4 && le == 6) ) return false;
         return true;
     }
 }
